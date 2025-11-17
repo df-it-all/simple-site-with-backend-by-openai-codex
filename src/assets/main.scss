@@ -1,0 +1,78 @@
+@use 'sass:color';
+
+:root {
+  --primary: #3a86ff;
+  --surface: #f5f6fa;
+  --text: #1f1f1f;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--surface);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+}
+
+#app {
+  min-height: 100vh;
+}
+
+.main-shell {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 3rem 1rem 4rem;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.button {
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: color.scale(var(--primary), $lightness: -10%);
+  }
+}
+
+input {
+  padding: 0.75rem;
+  width: 100%;
+  border: 1px solid #d5d7e3;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+nav {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+nav a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+nav .router-link-active {
+  color: var(--primary);
+}
